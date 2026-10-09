@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./data/crop_estimation_prod.db
+      - SECRET_KEY=change-this-in-production-12345
+      - SATELLITE_PROVIDER=mock
+      - FRONTEND_URL=http://localhost:8501
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://backend:8000/api/v1
+    depends_on:
+      - backend

@@ -1,0 +1,27 @@
+D:\crop acreage and height estimation\venv\Lib\site-packages\pystac_client\item_search.py:243: DoesNotConformTo: Server does not conform to QUERY
+  warnings.warn(DoesNotConformTo("QUERY"))
+D:\crop acreage and height estimation\venv\Lib\site-packages\rasterio\warp.py:390: NotGeoreferencedWarning: Dataset has no geotransform, gcps, or rpcs. The identity matrix will be returned.
+  dest = _reproject(
+Testing connection...
+Connected: True
+Fetching NDVI layer...
+{
+  "success": true,
+  "provider": "Planetary Computer",
+  "layer_id": "ndvi",
+  "render_type": "image_overlay",
+  "image_path": "backend/cache/nalgonda_maps\\sentinel2_ndvi_2024_Kharif.png",
+  "bounds": [
+    [
+      16.3556998,
+      78.6152855
+    ],
+    [
+      17.360205,
+      79.7020031
+    ]
+  ],
+  "scene_count": 15,
+  "best_scene": "S2B_MSIL2A_20241029T050839_R019_T44QLE_20241029T073358",
+  "date_range": "2024-06-01 to 2024-10-31"
+}
